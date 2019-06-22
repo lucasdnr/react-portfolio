@@ -1,12 +1,15 @@
 import React from 'react';
-import Header from '../components/Header/Header';
-// import Main from './Main';
+import Navigation from '../components/Navigation/Navigation';
+import Masthead from '../components/Masthead/Masthead';
+
 
 function App() {
   return (
     <div>
-      <Header />
-      {/* <Main /> */}
+      {/* Navigation */}
+      <Navigation />
+      {/* Masthead */}
+      <Masthead />
     </div>
   );
 }
