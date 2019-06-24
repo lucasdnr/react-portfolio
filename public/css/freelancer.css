@@ -10757,7 +10757,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .portfolio {
-  margin-bottom: -30px;
+  margin-bottom: 0px;
 }
 
 .portfolio .portfolio-item {
