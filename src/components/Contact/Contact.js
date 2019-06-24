@@ -20,7 +20,7 @@ const contact = () => (
             <div className="row">
                 <div className="col-lg-8 mx-auto">
                     {/* To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.  */}
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                    <form name="sentMessage" id="contactForm">
                         <div className="control-group">
                             <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Name</label>

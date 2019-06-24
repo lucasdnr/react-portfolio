@@ -41,7 +41,7 @@ const Navigation = () => {
   };
 
   const handleScroll = () => {
-    let offsetTop = window.pageYOffset;//inputRef.current.getBoundingClientRect().top;
+    let offsetTop = window.pageYOffset;
     if ( offsetTop > 100 ){
       setNavClass('navbar-shrink');
     }else{
