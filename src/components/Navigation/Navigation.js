@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const Navigation = () => {
   const inputRef = useRef();
+  const [navClass, setNavClass] = useState('');
 
   const sections = [{
     name: "Portfolio",
@@ -24,9 +25,9 @@ const Navigation = () => {
           activeClass="active"
           to={section.url}
           spy={true}
-          smooth={true}
+          smooth="easeInOutQuart"
           offset={-70}
-          duration={500}
+          duration={800}
           className="nav-link py-3 px-0 px-lg-3 rounded"
           href="">
           {section.name}
@@ -40,8 +41,12 @@ const Navigation = () => {
   };
 
   const handleScroll = () => {
-    let offsetTop = inputRef.current.getBoundingClientRect().top;
-    console.log('Top ' + offsetTop);
+    let offsetTop = window.pageYOffset;//inputRef.current.getBoundingClientRect().top;
+    if ( offsetTop > 100 ){
+      setNavClass('navbar-shrink');
+    }else{
+      setNavClass('');
+    }
   };
 
   useEffect(() => {
@@ -49,7 +54,7 @@ const Navigation = () => {
   });
 
   return (
-    <nav className="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" ref={inputRef}>
+    <nav className={`navbar navbar-expand-lg bg-secondary text-uppercase fixed-top ${navClass}`} id="mainNav" ref={inputRef}>
       <div className="container">
         <a className="navbar-brand js-scroll-trigger" href="#page-top" onClick={scrollToTop}>Start Bootstrap</a>
         <button className="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
